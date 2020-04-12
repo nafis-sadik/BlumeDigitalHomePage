@@ -14,8 +14,6 @@
 
 @media only screen and (min-width:320px) {
     .swiper-slide {
-        background-position: center;
-        background-size: cover;
         height: 50vh;
         width: 60vw;
     }
@@ -39,7 +37,7 @@
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        height: 40vh;
-        width: 20vw;
+        height: 60vh;
+        width: 30vw;
     }
 }
