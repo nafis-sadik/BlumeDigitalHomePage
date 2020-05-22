@@ -1,5 +1,5 @@
-$('document').ready(() => {
-    let swiper = new Swiper('.swiper-container', {
+$(document).ready(function(){
+    var swiper = new Swiper('.swiper-container', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -9,7 +9,7 @@ $('document').ready(() => {
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows : true,
-        },
+            slideShadows : true
+        }
     });
 });
