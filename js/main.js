@@ -1,4 +1,10 @@
 const Panel = $('#ContentPlate');
+const PartialPageNames= {
+    Home: '#',
+    Portfolio: './partialViews/Portfolio.html',
+    About: './partialViews/AboutUs.html',
+    ContactForm: './partialViews/ContactUs.html'
+};
 
 const PanelSlideUp = (buttonClicked) => {
     let navItems = $('.nav-item');
@@ -12,13 +18,13 @@ const PanelSlideUp = (buttonClicked) => {
                 PanelShrink();
                 break;
             case "Portfolio":
-                PanelGrow(GetPortfolio);
+                LoadPanelFor(PartialPageNames.Portfolio);
                 break;
             case "About Us":
-                PanelGrow();
+                LoadPanelFor(PartialPageNames.About);
                 break;
             case "Contact Us":
-                PanelGrow(GetContactForm);
+                LoadPanelFor(PartialPageNames.ContactForm);
                 break;
         }
     } else {
@@ -28,40 +34,22 @@ const PanelSlideUp = (buttonClicked) => {
     }
 };
 
-const PanelGrow = (expandAction) => {
-    if(Panel.height() > 0){
-        PanelShrink();
-    }
-    Panel.animate({'min-height':'100vh'});
-    if(expandAction instanceof Function){
-        expandAction();
-    }
+const PanelGrow = () => {
+    Panel.animate({'top':'0%'});
 };
 
 const PanelShrink = () => {
-    if(Panel.height() > 50){
-        Panel.animate({'min-height':'0vh'});
-        $('#ContentPlate').empty();
-    }
+    Panel.animate({'top':'-100%'});
 };
 
-const GetPortfolio = () => {
+const LoadPanelFor = (PartilPageName) => {
     $.ajax({
-        url: './partialViews/Portfolio.html',
+        url: PartilPageName,
         success: (result) => {
+            PanelShrink();
+            $('#ContentPlate').empty();``
             $('#ContentPlate').append(result);
-        },
-        error: (result) => {
-            console.log(result);
-        }
-    });
-};
-
-const GetContactForm = () => {
-    $.ajax({
-        url: './partialViews/ContactUs.html',
-        success: (result) => {
-            $('#ContentPlate').append(result);
+            PanelGrow();
         },
         error: (result) => {
             console.log(result);
