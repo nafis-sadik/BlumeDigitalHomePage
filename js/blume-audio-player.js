@@ -16,7 +16,7 @@ $('document').ready(function () {
 });
 
 $('#PlayButton').click(() => {
-    playMusic()
+    playMusic();
 });
 
 $('#NextMusic').click(() => {

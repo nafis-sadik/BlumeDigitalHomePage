@@ -18,13 +18,28 @@ const PanelSlideUp = (buttonClicked) => {
                 PanelShrink();
                 break;
             case "Portfolio":
-                LoadPanelFor(PartialPageNames.Portfolio);
+                PanelShrink();
+                $.get(PartialPageNames.Portfolio, (result) => {
+                    $('#ContentPlate').empty();
+                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
+                });
+                PanelGrow();
                 break;
             case "About Us":
-                LoadPanelFor(PartialPageNames.About);
+                PanelShrink();
+                $.get(PartialPageNames.About, (result) => {
+                    $('#ContentPlate').empty();
+                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
+                });
+                PanelGrow();
                 break;
             case "Contact Us":
-                LoadPanelFor(PartialPageNames.ContactForm);
+                PanelShrink();
+                $.get(PartialPageNames.ContactForm, (result) => {
+                    $('#ContentPlate').empty();
+                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
+                });
+                PanelGrow();
                 break;
         }
     } else {
@@ -35,24 +50,13 @@ const PanelSlideUp = (buttonClicked) => {
 };
 
 const PanelGrow = () => {
-    Panel.animate({'top':'0%'});
+    Panel.animate({'top':'0%'}, 600);
 };
 
 const PanelShrink = () => {
-    Panel.animate({'top':'-100%'});
+    Panel.animate({'top':'-100%'}, 600);
 };
 
 const LoadPanelFor = (PartilPageName) => {
-    $.ajax({
-        url: PartilPageName,
-        success: (result) => {
-            PanelShrink();
-            $('#ContentPlate').empty();``
-            $('#ContentPlate').append(result);
-            PanelGrow();
-        },
-        error: (result) => {
-            console.log(result);
-        }
-    });
+    return $.ajax({ url: PartilPageName });
 };
