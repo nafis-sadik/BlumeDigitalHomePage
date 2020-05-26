@@ -1,10 +1,12 @@
 :root {
-    font-size: 16px;
     font-family: 'Poppins', sans-serif;
     --text-primary: #f0f0f0;
     --text-secondary: #6b6b6b;
     --bg-primary: #202020;
     --bg-secondary: #0e0f10;
+    --alternative-bg-primary: #ffffff;
+    --alternative-text-primary: #000000;
+    --alternative-text-secondary: #ffffff;
     --focus-primary: #8CDC52;
     --focus-secondary: #5DC378;
     --transition-speed: 600ms;
@@ -40,26 +42,6 @@ body::-webkit-scrollbar-thumb {
     background-position: center center;
 }
 
-#NavSection {
-    height: 6rem;
-    width: 100vw;
-    background-color: var(--bg-primary);
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.navBar-nav {
-    height: 6rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
 .nav-item:hover {
     transition: 0.5s ease;
     cursor: pointer;
@@ -70,6 +52,8 @@ body::-webkit-scrollbar-thumb {
     height: 2rem;
     padding: 2rem;
 }
+
+/* Nav Section */
 
 .overlay {
     background-color: black;
@@ -87,12 +71,14 @@ body::-webkit-scrollbar-thumb {
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #C9FFD9;
+    color: var(--text-primary);
 }
 
 .link-text-hidden {
     display: none;
 }
+
+/* Music Player Style */
 
 #MusicPlayer {
     cursor: pointer;
@@ -118,16 +104,15 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
 }
 
-.active {
-    border-bottom: 1px solid var(--focus-primary);
-}
+/* Music Player Style */
 
 /*Animation related css*/
 
 #LogoHome {
-    fill: #f0f0f0;
+    fill: var(--text-primary);
     animation: spin 10s infinite linear;
     transform-origin: center;
+    max-height: 80%;
 }
 
 @keyframes spin {
@@ -139,11 +124,4 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-#ContentPlate {
-    background-color: #101010;
-    display: block;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: -100%;
-}
+/*Animation related css*/

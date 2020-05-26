@@ -12,17 +12,16 @@ const PanelSlideUp = (buttonClicked) => {
         for (let i = 0; i < navItems.length; i++){
             $(navItems[i]).removeClass('active');
         }
-        $(buttonClicked).addClass('active');
+        if(!$(buttonClicked).hasClass('logo'))
+            $(buttonClicked).addClass('active');
+        else 
+            $('.home').addClass('active');
         switch ($($(buttonClicked).children()[1]).html()) {
-            case "Home":
-                PanelShrink();
-                break;
             case "Portfolio":
                 PanelShrink();
                 $.get(PartialPageNames.Portfolio, (result) => {
                     setTimeout(() => { $('#ContentPlate').append(result); }, 400);
                 });
-                debugger;
                 PanelGrow();
                 break;
             case "About Us":
@@ -30,7 +29,6 @@ const PanelSlideUp = (buttonClicked) => {
                 $.get(PartialPageNames.About, (result) => {
                     setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
                 });
-                debugger;
                 PanelGrow();
                 break;
             case "Contact Us":
@@ -39,6 +37,9 @@ const PanelSlideUp = (buttonClicked) => {
                     setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
                 });
                 PanelGrow();
+                break;
+            default:
+                PanelShrink();
                 break;
         }
     } else {
@@ -51,11 +52,20 @@ const PanelSlideUp = (buttonClicked) => {
 const PanelShrink = () => {
     if($('#ContentPlate').position().top < 0) { return; }
     setTimeout(() => { $('#ContentPlate').empty(); }, 400);
-    Panel.animate({'top':'-100%'}, 600);
+    if(window.innerWidth >= 767){
+        Panel.animate({'top':'-100%'}, 600);
+    } else {
+        Panel.animate({'left':'100%'}, 600);
+    }
 };
 
 const PanelGrow = () => {
-    Panel.animate({'top':'0%'}, 600);
+    if(window.innerWidth >= 767){
+        Panel.css({'left':'0%'});
+        Panel.animate({'top':'0%'}, 600);
+    } else {
+        Panel.animate({'left':'10%'}, 600);
+    }
 };
 
 const LoadPanelFor = (PartilPageName) => {
