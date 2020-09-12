@@ -9,34 +9,35 @@ const PartialPageNames= {
 const PanelSlideUp = (buttonClicked) => {
     let navItems = $('.nav-item');
     if(!$(buttonClicked).hasClass('active')){
+        // Removing active class from other buttons
         for (let i = 0; i < navItems.length; i++){
             $(navItems[i]).removeClass('active');
         }
+
+        // Home button is restricted to active class
         if(!$(buttonClicked).hasClass('logo'))
             $(buttonClicked).addClass('active');
         else 
             $('.home').addClass('active');
+        
         switch ($($(buttonClicked).children()[1]).html()) {
             case "Portfolio":
-                PanelShrink();
-                $.get(PartialPageNames.Portfolio, (result) => {
-                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);
-                });
-                PanelGrow();
+                $.when(new Promise(PanelShrink))
+                .then($.get(PartialPageNames.Portfolio, (result) => {
+                    setTimeout(() => { $('#ContentPlate').append(result) }, 400);
+                })).done(PanelGrow());
                 break;
             case "About Us":
-                PanelShrink();
-                $.get(PartialPageNames.About, (result) => {
-                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
-                });
-                PanelGrow();
+                $.when(new Promise(PanelShrink))
+                .then($.get(PartialPageNames.About, (result) => {
+                    setTimeout(() => { $('#ContentPlate').append(result) }, 400);
+                })).done(PanelGrow());
                 break;
             case "Contact Us":
-                PanelShrink();
-                $.get(PartialPageNames.ContactForm, (result) => {
-                    setTimeout(() => { $('#ContentPlate').append(result); }, 400);                    
-                });
-                PanelGrow();
+                $.when(new Promise(PanelShrink))
+                .then($.get(PartialPageNames.ContactForm, (result) => {
+                    setTimeout(() => { $('#ContentPlate').append(result) }, 400);
+                })).done(PanelGrow());
                 break;
             default:
                 PanelShrink();
@@ -51,12 +52,12 @@ const PanelSlideUp = (buttonClicked) => {
 
 const PanelShrink = () => {
     if($('#ContentPlate').position().top < 0) { return; }
-    setTimeout(() => { $('#ContentPlate').empty(); }, 400);
     if(window.innerWidth >= 767){
         Panel.animate({'top':'-100%'}, 600);
     } else {
         Panel.animate({'left':'100%'}, 600);
     }
+    setTimeout(() => { $('#ContentPlate').empty(); }, 400);
 };
 
 const PanelGrow = () => {
@@ -66,6 +67,7 @@ const PanelGrow = () => {
     } else {
         Panel.animate({'left':'10%'}, 600);
     }
+    console.log('section 3');
 };
 
 const LoadPanelFor = (PartilPageName) => {
