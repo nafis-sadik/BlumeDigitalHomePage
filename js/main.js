@@ -73,3 +73,14 @@ const PanelGrow = () => {
 const LoadPanelFor = (PartilPageName) => {
     return $.ajax({ url: PartilPageName });
 };
+
+// tilt js
+$(document).ready(()=>{
+    VanillaTilt.init(document.querySelector(".tilt"), {
+        max: 5,
+        speed: 400
+    });
+    
+    //It also supports NodeList
+    VanillaTilt.init(document.querySelectorAll(".tilt"));
+});
