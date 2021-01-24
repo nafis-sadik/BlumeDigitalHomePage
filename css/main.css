@@ -12,6 +12,9 @@
   --transition-speed: 600ms;
 }
 
+/* Font */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
 body {
   margin: 0;
   padding: 0;

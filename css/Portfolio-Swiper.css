@@ -1,90 +1,96 @@
 .swiper-container {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    overflow: inherit;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  overflow: inherit;
 }
 .swiper-slide {
-    background-position: center 90%;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-position: center 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.project-details{
-    background-color: var(--alternative-bg-primary);
-    opacity: .8;
-    overflow: hidden;
+.project-details {
+  background-color: var(--alternative-bg-primary);
+  opacity: 0.8;
+  overflow: hidden;
 }
 
-.text-container{
-    color: var(--alternative-text-primary);
-    text-align: center;
+.text-container {
+  color: var(--alternative-text-primary);
+  text-align: center;
 }
 
-.visit-project{    
-    background-color: transparent;
-    border: 1px solid var(--alternative-text-primary);
-    display: inline-block;
-    color: var(--alternative-text-primary);
+.visit-project {
+  background-color: transparent;
+  border: 1px solid var(--alternative-text-primary);
+  display: inline-block;
+  color: var(--alternative-text-primary);
 }
 
-.visit-project:hover{ 
-    transition: 0.6s;
-    background-color: var(--alternative-text-primary);
-    color: var(--alternative-text-secondary);
-    cursor: pointer;
- }
-
-@media only screen and (min-width:320px) {
-    .swiper-slide {
-        height: 50vh;
-        width: 60vw;
-    }
-
-    .text-container > h2 {
-        padding-bottom: 0px;
-    }
-
-    .visit-project {
-        padding: 0.25rem 2rem;
-    }
-
-    .project-details{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding-bottom: 1rem;
-    }
+.visit-project:hover {
+  transition: 0.6s;
+  background-color: var(--alternative-text-primary);
+  color: var(--alternative-text-secondary);
+  cursor: pointer;
 }
 
-@media only screen and (min-width:480px) { }
+.text-container h2 {
+  margin: 0.7rem 0;
+}
 
-@media only screen and (min-width:767px) { }
+@media only screen and (min-width: 320px) {
+  .swiper-slide {
+    height: 50vh;
+    width: 60vw;
+  }
 
-@media only screen and (min-width:991px) {
-    .swiper-slide {
-        height: 40vh;
-        width: 60vw;
-    }
+  .text-container > h2 {
+    padding-bottom: 0px;
+  }
 
-    .visit-project{
-        padding: 0.5rem 2rem;
-    }
+  .visit-project {
+    padding: 0.25rem 2rem;
+  }
 
-    .project-details{   
-        position: relative; 
-        top: 70%;
-        height: 30%;
-        width: 100%;
-        padding-bottom: 0;
-    }
+  .project-details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 767px) {
+}
+
+@media only screen and (min-width: 991px) {
+  .swiper-slide {
+    height: 40vh;
+    width: 60vw;
+  }
+
+  .visit-project {
+    padding: 0.5rem 2rem;
+  }
+
+  .project-details {
+    position: relative;
+    top: 70%;
+    height: 30%;
+    width: 100%;
+    padding-bottom: 0;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-    .swiper-slide {
-        height: 60vh;
-        width: 35vw;
-    }
+  .swiper-slide {
+    height: 60vh;
+    width: 35vw;
+  }
 }
