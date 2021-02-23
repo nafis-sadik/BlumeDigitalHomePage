@@ -25,7 +25,6 @@ const PanelSlideUp = (buttonClicked) => {
             $.get(PartialPageNames.Portfolio, (result) => {
               setTimeout(() => {
                 $("#ContentPlate").append(result);
-                InitializeTilt(5, 400);
               }, 400);
             })
           )
@@ -37,7 +36,6 @@ const PanelSlideUp = (buttonClicked) => {
             $.get(PartialPageNames.About, (result) => {
               setTimeout(() => {
                 $("#ContentPlate").append(result);
-                InitializeTilt(2, 200);
               }, 400);
             })
           )
@@ -82,10 +80,9 @@ const PanelShrink = () => {
 const PanelGrow = () => {
   if (window.innerWidth >= 767) {
     Panel.css({ left: "0%" });
-    Panel.css({ right: "0%" });
     Panel.animate({ top: "0%" }, 600);
   } else {
-    Panel.animate({ left: "20%" }, 600);
+    Panel.animate({ left: "10%" }, 600);
   }
 };
 
@@ -93,43 +90,25 @@ const LoadPanelFor = (PartilPageName) => {
   return $.ajax({ url: PartilPageName });
 };
 
-const InitializeTilt = (_max, _speed) => {
-  //It also supports NodeList
-  VanillaTilt.init(document.querySelectorAll(".tilt"));
-  VanillaTilt.init(document.querySelector(".tilt"), {
-    max: _max,
-    speed: _speed,
-  });
-
-  //It also supports NodeList
-  VanillaTilt.init(document.querySelectorAll(".tilt"));
-};
-
-// tilt js
-<<<<<<< HEAD
-$(document).ready(()=>{
-    $('.tilt-home').css('height', '100vh');
-    $('.tilt').css('height', '100vh');
-
-    VanillaTilt.init(document.querySelector(".tilt-home"), {
-        max: 5,
-        speed: 400,
-        reverse: false,
-        perspective: 1500,
-        glare: false,
-        "max-glare": 0.2,
-        gyroscope: true
-    });
-    
-    //It also supports NodeList
-    VanillaTilt.init(document.querySelectorAll(".tilt-home"));
-
-    particlesJS.load('particles-js', 'assets/particles.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
-});
-=======
 $(document).ready(() => {
-  InitializeTilt(5, 400);
+  $(".tilt-home").css("height", "100vh");
+  $(".tilt").css("height", "100vh");
+
+  particlesJS.load(
+    "particles-js",
+    "assets/particlesjs-config.json",
+    VanillaTiltInit
+  );
 });
->>>>>>> 583ea90e6cfa7c9b46404c6e1a6ab1526a700ec0
+
+let VanillaTiltInit = () => {
+  VanillaTilt.init(document.querySelector(".tilt"), {
+    max: 5,
+    speed: 400,
+    reverse: false,
+    perspective: 1500,
+    glare: true,
+    "max-glare": 0.2,
+    gyroscope: true,
+  });
+};

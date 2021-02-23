@@ -1,27 +1,33 @@
-#AboutUsSection .card{
+#AboutUsSection .card {
   overflow: hidden;
   display: inline-block;
 }
+
+#AboutUsSection .card:hover {
+  cursor: pointer;
+}
+
 #AboutUsSection .card h1,
 #AboutUsSection .card h2,
 #AboutUsSection .card h3,
 #AboutUsSection .card h4,
 #AboutUsSection .card h5,
-#AboutUsSection .card h6{
+#AboutUsSection .card h6 {
   color: var(--alternative-text-primary);
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
-#AboutUsSection .card .img{
-  width: 300px;
-  height: 300px;
+#AboutUsSection .card .img {
+  min-width: 300px;
+  min-height: 300px;
+  width: 100%;
   object-fit: cover;
   background-color: rebeccapurple;
 }
 
-#AboutUsSection .card .description{
+#AboutUsSection .card .description {
   min-height: 50px;
-  padding: 0 2% 5% 2%;
+  padding: 5%;
   background-color: var(--alternative-bg-primary);
 }

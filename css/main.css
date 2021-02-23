@@ -21,6 +21,7 @@ body {
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
+  font: normal 75% Arial, Helvetica, sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -37,11 +38,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 #MainBody {
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("../img/bg-home.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/img/photo-1612030731225-cb38a45c8bd2.jpg");
 }
 
 .nav-item:hover {
@@ -111,9 +112,9 @@ body::-webkit-scrollbar-thumb {
 /* Music Player Style */
 
 /* Tilt */
-.tilt{
+.tilt {
   transform-style: preserve-3d;
-  transform:  perspective(1000px);
+  transform: perspective(1000px);
   transform: translateZ(20px);
 }
 /* Tilt */
@@ -136,16 +137,11 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-<<<<<<< HEAD
-/*Animation related css*/
-
-=======
 /* Animation related css */
 /* System classes */
-.container{
+.container {
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
 }
 /* System classes */
->>>>>>> 583ea90e6cfa7c9b46404c6e1a6ab1526a700ec0

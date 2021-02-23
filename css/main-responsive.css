@@ -59,14 +59,14 @@
   #LogoHome {
     width: 50vw;
   }
-  
+
   .card {
     display: inline-block;
     width: 100%;
     margin: 5%;
   }
 
-  .nav-item svg{
+  .nav-item svg {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -115,15 +115,15 @@
   #MainBody {
     width: 100vw;
   }
-  
+
   #NavSection svg {
     height: 2rem;
     padding: 2rem;
   }
 
-  .card{
+  .card {
     display: inline-block;
-    width: 24%;
+    width: 22%;
     margin: 1%;
   }
 }
