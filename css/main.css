@@ -107,6 +107,14 @@ body::-webkit-scrollbar-thumb {
 
 /* Music Player Style */
 
+/* Tilt */
+.tilt{
+  transform-style: preserve-3d;
+  transform:  perspective(1000px);
+  transform: translateZ(20px);
+}
+/* Tilt */
+
 /*Animation related css*/
 
 #LogoHome {
@@ -125,3 +133,4 @@ body::-webkit-scrollbar-thumb {
 }
 
 /*Animation related css*/
+

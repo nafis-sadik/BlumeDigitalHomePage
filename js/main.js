@@ -76,11 +76,23 @@ const LoadPanelFor = (PartilPageName) => {
 
 // tilt js
 $(document).ready(()=>{
-    VanillaTilt.init(document.querySelector(".tilt"), {
+    $('.tilt-home').css('height', '100vh');
+    $('.tilt').css('height', '100vh');
+
+    VanillaTilt.init(document.querySelector(".tilt-home"), {
         max: 5,
-        speed: 400
+        speed: 400,
+        reverse: false,
+        perspective: 1500,
+        glare: false,
+        "max-glare": 0.2,
+        gyroscope: true
     });
     
     //It also supports NodeList
-    VanillaTilt.init(document.querySelectorAll(".tilt"));
+    VanillaTilt.init(document.querySelectorAll(".tilt-home"));
+
+    particlesJS.load('particles-js', 'assets/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
 });
