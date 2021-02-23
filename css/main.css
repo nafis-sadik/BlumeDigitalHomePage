@@ -12,6 +12,9 @@
   --transition-speed: 600ms;
 }
 
+/* Font */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
 body {
   margin: 0;
   padding: 0;
@@ -49,7 +52,7 @@ body::-webkit-scrollbar-thumb {
 
 #NavSection svg {
   height: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 /* Nav Section */
@@ -122,6 +125,7 @@ body::-webkit-scrollbar-thumb {
   /* animation: spin 25s infinite linear; */
   transform-origin: center;
   height: 50vh;
+}
 
 @keyframes spin {
   from {
@@ -132,5 +136,16 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+<<<<<<< HEAD
 /*Animation related css*/
 
+=======
+/* Animation related css */
+/* System classes */
+.container{
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+/* System classes */
+>>>>>>> 583ea90e6cfa7c9b46404c6e1a6ab1526a700ec0

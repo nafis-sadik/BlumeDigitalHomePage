@@ -1,0 +1,27 @@
+#AboutUsSection .card{
+  overflow: hidden;
+  display: inline-block;
+}
+#AboutUsSection .card h1,
+#AboutUsSection .card h2,
+#AboutUsSection .card h3,
+#AboutUsSection .card h4,
+#AboutUsSection .card h5,
+#AboutUsSection .card h6{
+  color: var(--alternative-text-primary);
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#AboutUsSection .card .img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  background-color: rebeccapurple;
+}
+
+#AboutUsSection .card .description{
+  min-height: 50px;
+  padding: 0 2% 5% 2%;
+  background-color: var(--alternative-bg-primary);
+}
