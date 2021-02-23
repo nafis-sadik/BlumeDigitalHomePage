@@ -36,7 +36,6 @@ const PanelSlideUp = (buttonClicked) => {
           .then(
             $.get(PartialPageNames.About, (result) => {
               setTimeout(() => {
-                console.log("init");
                 $("#ContentPlate").append(result);
                 InitializeTilt(2, 200);
               }, 400);
@@ -83,9 +82,10 @@ const PanelShrink = () => {
 const PanelGrow = () => {
   if (window.innerWidth >= 767) {
     Panel.css({ left: "0%" });
+    Panel.css({ right: "0%" });
     Panel.animate({ top: "0%" }, 600);
   } else {
-    Panel.animate({ left: "10%" }, 600);
+    Panel.animate({ left: "20%" }, 600);
   }
 };
 

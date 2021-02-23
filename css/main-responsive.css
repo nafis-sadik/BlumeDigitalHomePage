@@ -34,9 +34,9 @@
   }
 
   .active {
-    -moz-box-shadow: inset 0 0 10px 5px #000000;
-    -webkit-box-shadow: inset 0 0 10px 5px #000000;
-    box-shadow: inset 0 0 10px 5px #000000;
+    -moz-box-shadow: inset 0 0 10px 5px var(--alternative-text-primary);
+    -webkit-box-shadow: inset 0 0 10px 5px var(--alternative-text-primary);
+    box-shadow: inset 0 0 10px 5px var(--alternative-text-primary);
     border-bottom: 1px solid var(--focus-primary);
   }
 
@@ -44,7 +44,7 @@
     background-color: var(--bg-primary);
     display: block;
     height: 100vh;
-    width: 100vw;
+    width: 80vw;
     position: fixed;
     top: 0%;
     left: 100%;
@@ -58,6 +58,18 @@
 
   #LogoHome {
     width: 50vw;
+  }
+  
+  .card {
+    display: inline-block;
+    width: 100%;
+    margin: 5%;
+  }
+
+  .nav-item svg{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -97,10 +109,22 @@
   #ContentPlate {
     top: -100%;
     left: 0;
+    width: 100vw;
   }
 
   #MainBody {
     width: 100vw;
+  }
+  
+  #NavSection svg {
+    height: 2rem;
+    padding: 2rem;
+  }
+
+  .card{
+    display: inline-block;
+    width: 24%;
+    margin: 1%;
   }
 }
 
