@@ -1,32 +1,31 @@
-#AboutUsSection .card {
+.card {
   overflow: hidden;
-  display: inline-block;
 }
 
-#AboutUsSection .card:hover {
+.card:hover {
   cursor: pointer;
 }
 
-#AboutUsSection .card h1,
-#AboutUsSection .card h2,
-#AboutUsSection .card h3,
-#AboutUsSection .card h4,
-#AboutUsSection .card h5,
-#AboutUsSection .card h6 {
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
   color: var(--alternative-text-primary);
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
-#AboutUsSection .card .img {
-  min-width: 300px;
+.card .img {
+  /* min-width: 300px; */
   min-height: 300px;
   width: 100%;
   object-fit: cover;
   background-color: rebeccapurple;
 }
 
-#AboutUsSection .card .description {
+.card .description {
   min-height: 50px;
   padding: 5%;
   background-color: var(--alternative-bg-primary);
@@ -55,8 +54,52 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .swiper-container-v {
   background-color: var(--bg-primary);
+}
+
+.swiper-container {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  overflow: inherit;
+}
+.swiper-slide {
+  background-position: center 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 320px) {
+  .swiper-slide {
+    height: 50vh;
+    width: 60vw;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 767px) {
+}
+
+@media only screen and (min-width: 991px) {
+  .swiper-slide {
+    height: 40vh;
+    width: 60vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .swiper-slide {
+    height: 60vh;
+    width: 35vw;
+  }
 }

@@ -141,5 +141,6 @@ body::-webkit-scrollbar-thumb {
 /* System classes */
 .container {
   margin: 10%;
+  max-height: 100vh;
 }
 /* System classes */

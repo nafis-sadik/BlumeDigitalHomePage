@@ -82,7 +82,7 @@ const PanelGrow = () => {
     Panel.css({ left: "0%" });
     Panel.animate({ top: "0%" }, 600);
   } else {
-    Panel.animate({ left: "10%" }, 600);
+    Panel.animate({ left: "20%" }, 600);
   }
 };
 
