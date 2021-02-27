@@ -2,76 +2,40 @@
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <div class="card">
-        <div class="description">
-          <img
-            src="/img/About-Us/367-500x400.jpg"
-            alt="Md. Nafis Sadik"
-            class="img"
-          />
-          <h2>Md.Nafis Sadik</h2>
-          <h5>Developed by</h5>
-        </div>
+        <h1>Mission</h1>
       </div>
     </div>
     <div class="swiper-slide">
-      <div class="card">
-        <div class="description">
-          <img
-            src="/img/About-Us/367-500x400.jpg"
-            alt="Md. Nafis Sadik"
-            class="img"
-          />
-          <h2>Md.Nafis Sadik</h2>
-          <h5>Developed by</h5>
-        </div>
-      </div>
+      <h1>Vission</h1>
     </div>
-    <div class="swiper-slide">
-      <div class="card">
-        <div class="discription">
-          <h1>Mission</h1>
-          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec sagittis nulla. Aliquam id ligula convallis, faucibus justo eget, commodo lacus. Duis nec lobortis ante. In sed turpis leo. Duis tempor risus a lacinia aliquam. Etiam egestas, nisl ut vestibulum bibendum, purus nisi accumsan ex, eu convallis purus diam eu augue. Fusce sodales tortor quam, a blandit turpis vestibulum sit amet. In sollicitudin lorem libero, eu congue quam efficitur vitae. Aenean gravida tellus sit amet sapien accumsan ultricies. Aenean sit amet justo nec nibh maximus lobortis. Fusce ac sodales enim.
-
-            Sed ac facilisis nisl, ut auctor la</h4>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div class="card">
-        <div class="discription">
-          <h1>Vission</h1>
-          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec sagittis nulla. Aliquam id ligula convallis, faucibus justo eget, commodo lacus. Duis nec lobortis ante. In sed turpis leo. Duis tempor risus a lacinia aliquam. Etiam egestas, nisl ut vestibulum bibendum, purus nisi accumsan ex, eu convallis purus diam eu augue. Fusce sodales tortor quam, a blandit turpis vestibulum sit amet. In sollicitudin lorem libero, eu congue quam efficitur vitae. Aenean gravida tellus sit amet sapien accumsan ultricies. Aenean sit amet justo nec nibh maximus lobortis. Fusce ac sodales enim.
-
-            Sed ac facilisis nisl, ut auctor la</h4>
-        </div>
-      </div>
-    </div>
+    <div class="swiper-slide"></div>
+    <div class="swiper-slide"></div>
+    <div
+      class="swiper-slide"
+      style="background-image: url(/img/about-us/664-1024x800.jpg)"
+    ></div>
   </div>
-  <!-- Add Scrollbar -->
-  <div class="swiper-scrollbar"></div>
-  
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination swiper-pagination-white"></div>
+  <!-- Add Arrows -->
+  <!-- <div class="swiper-button-next swiper-button-white"></div>
+  <div class="swiper-button-prev swiper-button-white"></div> -->
 </div>
 <link rel="stylesheet" href="/css/About-Us.css" />
 <!-- Initialize Swiper -->
 <script>
   $(document).ready(() => {
-    new Swiper('.swiper-container',
-      {
-        slidesPerView: 1,
-        spaceBetween: 5,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      }
-    );
+    var swiper = new Swiper(".swiper-container", {
+      spaceBetween: 30,
+      effect: "fade",
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   });
-  
-  $('.container').height(window.innerHeight - window.innerHeight-0.1)
 </script>

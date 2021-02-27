@@ -63,4 +63,11 @@
   </div>
 </div>
 <link rel="stylesheet" href="./css/Portfolio-Swiper.css" />
-<script src="./js/Portfolio-swiper.js"></script>
+<script>
+  $(document).ready(function () {
+    let swiper = new Swiper(".swiper-container", SwiperJsConfig.Coverflow);
+    $("a").click(() => {
+      alert("Coming Soon");
+    });
+  });
+</script>

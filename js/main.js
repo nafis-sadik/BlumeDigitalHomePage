@@ -112,3 +112,45 @@ let VanillaTiltInit = () => {
     gyroscope: true,
   });
 };
+
+// Swiper JS
+const SwiperJsConfig = {
+  singlePageSingleCardView: {
+    grabCursor: true,
+    slidesPerView: "auto",
+    slidesPerView: 1,
+    spaceBetween: 5,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  },
+  Coverflow: {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+  },
+  ScrollContainer: {
+    spaceBetween: 30,
+    direction: "vertical",
+    effect: "cube",
+    loop: true,
+    freeMode: false,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+    mousewheel: true,
+  },
+};
