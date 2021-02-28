@@ -5,7 +5,7 @@ const PartialPageNames = {
   About: "./partialViews/AboutUs.html",
   ContactForm: "./partialViews/ContactUs.html",
 };
-
+var swiper;
 const PanelSlideUp = (buttonClicked) => {
   let navItems = $(".nav-item");
   if (!$(buttonClicked).hasClass("active")) {
@@ -35,7 +35,9 @@ const PanelSlideUp = (buttonClicked) => {
           .then(
             $.get(PartialPageNames.About, (result) => {
               setTimeout(() => {
+                swiper = null;
                 $("#ContentPlate").append(result);
+                swiper = new Swiper('.swiper-container', SwiperJsConfig.AboutUs);
               }, 400);
             })
           )
@@ -142,15 +144,24 @@ const SwiperJsConfig = {
       slideShadows: true,
     },
   },
-  ScrollContainer: {
-    spaceBetween: 30,
-    direction: "vertical",
-    effect: "cube",
-    loop: true,
+  AboutUs: {
+    direction: 'vertical',
     freeMode: false,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
     mousewheel: true,
+    effect: 'cube',
+    grabCursor: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },      
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
   },
 };
